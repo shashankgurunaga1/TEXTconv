@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import TextArea from './Components/TextArea';
+import Navbar from './Components/Navbar';
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import About from './Components/About';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+
+    
+    
+      
+    <Navbar title="Text Conv."/>
+    <Routes>
+   
+    
+    <Route path="/" element={<TextArea title="Enter text to analyze"/>}/>
+     <Route path="/about" element={<About/>} />
+    
+    </Routes>
+    </Router>
+    
+    
+    </>
   );
 }
 
